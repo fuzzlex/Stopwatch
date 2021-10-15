@@ -1,51 +1,63 @@
-let minEl = document.getElementById("hour");
-let secEl = document.getElementById("minute");
-let milsecEl = document.getElementById("second");
+let minEl = document.getElementById("min");
+let secEl = document.getElementById("sec");
+let milEl = document.getElementById("mil");
 
 
-let timer1 = null;
-let i = 0;
-let j = 0;
+
+
+let i=0;
 let k = 0;
-let m = 0;
+let j = 0;
+let id1;
+
+
 
 function stop() {
-    m = 1;
-    
+    clearInterval(id1);
+   
 }
+
 
 function start() {  
-    m = 0;
-    var id1 = setInterval(milisec,1);
-    let id2 = setInterval(secFu,1000);
-    let id3 = setInterval(minFu,60000)
+    function startstop() {
+       
+        i +=4;
+        if(i == 1000){i = 0;j++};
+        if(j == 60){j = 0;k++};
+        milEl.innerHTML = i ;
+        secEl.innerHTML = j + " :";
+        minEl.innerHTML = k + " :" ;  
+    }
+    id1 = setInterval(startstop, 1)
 
-  
-    function milisec () { i += 4; 
-        if(i === 1000){i = 0;}
-        else if(m == 1){clearInterval(id1)}
-        else{milsecEl.innerHTML = i; }}
-    
-    function secFu(){ j++; 
-        if(j === 60){j = 0;}
-        else if(m == 1){clearInterval(id2)}
-        else{secEl.innerHTML = j + " :"; }}
-    
-    function minFu(){ k++; 
-        if(k === 60){k = 0}
-        else if(m == 1){clearInterval(id3)}
-        else{minEl.innerHTML = k + " :"; }}
-    
-     
-}
+    }
+
+
+ 
 
 
 
 
 
 
+//  id1 = setInterval(milisec,1);
+//  id2 = setInterval(secFu,1000);
+//  id3 = setInterval(minFu,60000)
 
 
+// function milisec () {
+//     i += 4; 
+//     if(i === 1000){i = 0;}{milEl.innerHTML = i; }
+//         }
+
+// function secFu(){
+//     j++; 
+//     if(j === 60){j = 0;}{secEl.innerHTML =  j + " :"; }
+// }
+   
+// function minFu(){ k++; 
+//     if(k === 60){k = 0}{minEl.innerHTML = k + " :"; }
+// }
 
 
 
