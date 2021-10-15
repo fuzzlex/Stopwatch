@@ -1,0 +1,49 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif ;
+}
+
+.container{
+    background-image: url("image.jpg");
+    height: 100vh;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+
+}
+
+.textHms ul{
+    display: flex;
+    list-style-type: none;
+    width: 35rem;
+    margin: 2rem;
+    font-size: 4rem;
+    color: rgb(21, 10, 117);
+    background-color: rgba(0, 255, 255,0.3);
+    padding: 2rem 5rem;
+    padding-right: 1rem;
+    
+
+}
+.textHms li{
+ 
+    width: 10rem;
+ 
+   
+    
+   
+
+}
+.buttons{
+    display: flex;
+    justify-content: space-evenly;
+}
+.buttons button{
+    padding: 1rem 2rem;
+    background-color: black;
+    color: aliceblue;
+}
