@@ -1,7 +1,10 @@
 let minEl = document.getElementById("min");
 let secEl = document.getElementById("sec");
 let milEl = document.getElementById("mil");
-let buttonEl = docume.getElementById("but")
+let buttonEl = document.getElementById("but");
+let saveEl = document.getElementById("save")
+let saTextEl = document.getElementById("saveText")
+let deleteEl = document.getElementById("delete") 
 
 
 let i=0;
@@ -23,15 +26,36 @@ function start() {
         if(j == 60){j = 0;k++};
         milEl.innerHTML = i ;
         secEl.innerHTML = formatLetter(j) + " :";
-        minEl.innerHTML = formatLetter(k) + " :" ;  
+        minEl.innerHTML = formatLetter(k) + " :" ;
+        
+    
     }
     id1 = setInterval(startstop, 1)
 
 }
+saveEl.addEventListener("click",function save(){
+    saTextEl.textContent += formatLetter(k) + ":" + formatLetter(j) + ":" +i + "--";
+
+})
+
+deleteEl.addEventListener("click",function del(){
+    saTextEl.textContent = "";
+
+})
+
+
 formatLetter = x => {
     if (x < 10){return "0" + x}return x;
 }
-buttonEl.
+buttonEl.addEventListener("click", function reset() {
+    milEl.innerHTML = "000";
+    secEl.innerHTML = "00 :";
+    minEl.innerHTML = "00 :";
+    i = 0;
+    j = 0;
+    k = 0;
+    
+})
 
  
 
