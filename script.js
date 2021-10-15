@@ -15,25 +15,27 @@ function stop() {
 }
 
 function start() {  
+    m = 0;
     var id1 = setInterval(milisec,1);
     let id2 = setInterval(secFu,1000);
     let id3 = setInterval(minFu,60000)
 
+  
     function milisec () { i += 4; 
-        if(i === 1000){
-         i = 0;
-        }milsecEl.innerHTML = i; }
+        if(i === 1000){i = 0;}
+        else if(m == 1){clearInterval(id1)}
+        else{milsecEl.innerHTML = i; }}
     
-    function secFu(){ j++; j
-        if(j === 60){
-            j = 0;
-        }secEl.innerHTML = j + " :"; }
+    function secFu(){ j++; 
+        if(j === 60){j = 0;}
+        else if(m == 1){clearInterval(id2)}
+        else{secEl.innerHTML = j + " :"; }}
     
     function minFu(){ k++; 
-        if(k === 60){
-         k = 0;
-        }minEl.innerHTML = k + " :"; }
-    if(m == 1){clearInterval(id1)}
+        if(k === 60){k = 0}
+        else if(m == 1){clearInterval(id3)}
+        else{minEl.innerHTML = k + " :"; }}
+    
      
 }
 
