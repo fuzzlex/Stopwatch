@@ -1,8 +1,7 @@
 let minEl = document.getElementById("min");
 let secEl = document.getElementById("sec");
 let milEl = document.getElementById("mil");
-
-
+let buttonEl = docume.getElementById("but")
 
 
 let i=0;
@@ -11,10 +10,8 @@ let j = 0;
 let id1;
 
 
-
 function stop() {
     clearInterval(id1);
-   
 }
 
 
@@ -25,13 +22,16 @@ function start() {
         if(i == 1000){i = 0;j++};
         if(j == 60){j = 0;k++};
         milEl.innerHTML = i ;
-        secEl.innerHTML = j + " :";
-        minEl.innerHTML = k + " :" ;  
+        secEl.innerHTML = formatLetter(j) + " :";
+        minEl.innerHTML = formatLetter(k) + " :" ;  
     }
     id1 = setInterval(startstop, 1)
 
-    }
-
+}
+formatLetter = x => {
+    if (x < 10){return "0" + x}return x;
+}
+buttonEl.
 
  
 
