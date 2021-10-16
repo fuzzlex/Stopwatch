@@ -27,7 +27,6 @@ function start() {
         milEl.innerHTML = i ;
         secEl.innerHTML = formatLetter(j) + " :";
         minEl.innerHTML = formatLetter(k) + " :" ;
-        
     
     }
     id1 = setInterval(startstop, 1)
